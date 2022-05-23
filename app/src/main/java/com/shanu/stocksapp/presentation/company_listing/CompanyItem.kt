@@ -24,7 +24,7 @@ fun CompanyItem(
         verticalAlignment = Alignment.CenterVertically
     ){
          Column(
-             modifier = Modifier.weight(1f)
+             modifier = Modifier.weight(1f).fillMaxWidth()
          ) {
              Row(
                  modifier = Modifier.fillMaxWidth()

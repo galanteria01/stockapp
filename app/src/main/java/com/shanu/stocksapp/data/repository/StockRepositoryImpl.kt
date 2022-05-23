@@ -1,8 +1,6 @@
 package com.shanu.stocksapp.data.repository
 
-import com.opencsv.CSVReader
 import com.shanu.stocksapp.data.csv.CSVParser
-import com.shanu.stocksapp.data.csv.CompanyListingParser
 import com.shanu.stocksapp.data.local.StockDatabase
 import com.shanu.stocksapp.data.mapper.toCompanyListing
 import com.shanu.stocksapp.data.mapper.toCompanyListingEntity
@@ -14,15 +12,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
-import java.io.InputStreamReader
-import javax.inject.Singleton
 import javax.inject.Inject
+import javax.inject.Singleton
 
 @Singleton
 class StockRepositoryImpl @Inject constructor(
-    val api: StockApi,
-    val db: StockDatabase,
-    val companyListingParser: CSVParser<CompanyListing>
+    private val api: StockApi,
+    private val db: StockDatabase,
+    private val companyListingParser: CSVParser<CompanyListing>
 ): StockRepository {
 
     private val dao = db.dao
