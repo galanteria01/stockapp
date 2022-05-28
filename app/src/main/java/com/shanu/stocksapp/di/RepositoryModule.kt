@@ -2,8 +2,10 @@ package com.shanu.stocksapp.di
 
 import com.shanu.stocksapp.data.csv.CSVParser
 import com.shanu.stocksapp.data.csv.CompanyListingParser
+import com.shanu.stocksapp.data.csv.IntradayInfoParser
 import com.shanu.stocksapp.data.repository.StockRepositoryImpl
 import com.shanu.stocksapp.domain.models.CompanyListing
+import com.shanu.stocksapp.domain.models.IntradayInfo
 import com.shanu.stocksapp.domain.repository.StockRepository
 import dagger.Binds
 import dagger.Module
@@ -20,6 +22,12 @@ abstract class RepositoryModule {
     abstract fun bindCompanyListingsParser(
         companyListingParser: CompanyListingParser
     ): CSVParser<CompanyListing>
+
+    @Binds
+    @Singleton
+    abstract fun bindIntradayInfoParser(
+        intradayInfoParser: IntradayInfoParser
+    ): CSVParser<IntradayInfo>
 
     @Binds
     @Singleton

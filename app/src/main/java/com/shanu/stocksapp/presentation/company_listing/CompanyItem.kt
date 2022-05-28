@@ -1,6 +1,5 @@
 package com.shanu.stocksapp.presentation.company_listing
 
-import android.widget.Space
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -45,12 +44,13 @@ fun CompanyItem(
                      color = MaterialTheme.colorScheme.onBackground
                  )
              }
+             Spacer(modifier = Modifier.height(8.dp))
+             Text(
+                 text = "(${company.symbol})",
+                 fontStyle = FontStyle.Italic,
+                 color = MaterialTheme.colorScheme.onBackground
+             )
          }
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "(${company.symbol})",
-            fontStyle = FontStyle.Italic,
-            color = MaterialTheme.colorScheme.onBackground
-        )
+
     }
 }
