@@ -12,12 +12,14 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import com.shanu.stocksapp.presentation.destinations.CompanyInfoScreenDestination
 
 @Composable
 @Destination(start = true)
@@ -60,7 +62,11 @@ fun CompanyListingScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                //TODO: Lets do it later
+                                navigator.navigate(
+                                    CompanyInfoScreenDestination(
+                                        symbol = company.symbol
+                                    )
+                                )
                             }
                             .padding(16.dp)
                     )

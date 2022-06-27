@@ -32,7 +32,7 @@ fun CompanyItem(
                      text = company.name,
                      fontWeight = FontWeight.SemiBold,
                      fontSize = 16.sp,
-                     color = MaterialTheme.colorScheme.onBackground,
+                     color = MaterialTheme.colorScheme.onPrimary,
                      overflow = TextOverflow.Ellipsis,
                      maxLines = 1,
                      modifier = Modifier.weight(1f)
@@ -41,14 +41,14 @@ fun CompanyItem(
                  Text(
                      text = company.exchange,
                      fontWeight = FontWeight.Light,
-                     color = MaterialTheme.colorScheme.onBackground
+                     color = MaterialTheme.colorScheme.onPrimary
                  )
              }
              Spacer(modifier = Modifier.height(8.dp))
              Text(
                  text = "(${company.symbol})",
                  fontStyle = FontStyle.Italic,
-                 color = MaterialTheme.colorScheme.onBackground
+                 color = MaterialTheme.colorScheme.onPrimary
              )
          }
 
